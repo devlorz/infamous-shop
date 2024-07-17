@@ -1,0 +1,44 @@
+[
+  {
+    "id": 0,
+    "src": "https://img.advice.co.th/images_nas/banner/advice_home_1721203598_1.jpg",
+    "srcset": "https://img.advice.co.th/images_nas/banner/advice_home_1721203598_1.jpg",
+    "alt": "It expo",
+    "url": "/"
+  },
+  {
+    "id": 1,
+    "src": "https://img.advice.co.th/images_nas/banner/advice_home_1720172463_1.jpg",
+    "srcset": "https://img.advice.co.th/images_nas/banner/advice_home_1720172463_1.jpg",
+    "alt": "Macbook Air",
+    "url": "/"
+  },
+  {
+    "id": 2,
+    "src": "https://img.advice.co.th/images_nas/banner/advice_home_1720868340_1.jpg",
+    "srcset": "https://img.advice.co.th/images_nas/banner/advice_home_1720868340_1.jpg",
+    "alt": "Samsung Galaxy Z Fold6",
+    "url": "/"
+  },
+  {
+    "id": 3,
+    "src": "https://img.advice.co.th/images_nas/banner/advice_home_1721015608_1.jpg",
+    "srcset": "https://img.advice.co.th/images_nas/banner/advice_home_1721015608_1.jpg",
+    "alt": "Mid Month Madness",
+    "url": "/"
+  },
+  {
+    "id": 4,
+    "src": "https://img.advice.co.th/images_nas/banner/advice_home_1719751902_1.jpg",
+    "srcset": "https://img.advice.co.th/images_nas/banner/advice_home_1719751902_1.jpg",
+    "alt": "Rainy Season Deal",
+    "url": "/"
+  },
+  {
+    "id": 5,
+    "src": "https://img.advice.co.th/images_nas/banner/advice_home_1719906052_1.jpg",
+    "srcset": "https://img.advice.co.th/images_nas/banner/advice_home_1719906052_1.jpg",
+    "alt": "Custom Payment",
+    "url": "/"
+  }
+]

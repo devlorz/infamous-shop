@@ -1,0 +1,53 @@
+<div class="flex flex-column justify-content-center gap-4">
+  <p-carousel
+    styleClass="w-full min-h-full"
+    ngSkipHydration
+    [value]="bannersSig()"
+    [numVisible]="1"
+    [numScroll]="1"
+    [circular]="true"
+    [draggable]="true"
+    [showNavigators]="showNavigators()"
+    [autoplayInterval]="4000"
+  >
+    <ng-template let-slide pTemplate="item">
+      <div class="h-full mx-2  card">
+        @if (loadingBanners()) {
+          <p-skeleton styleClass="w-full h-17rem" />
+        } @else if (bannerError()) {
+          <h3 class="text-center text-red-500">{{ bannerError() }}</h3>
+        } @else {
+          <img
+            class="w-full min-h-full border-round-xs px-2 py-2"
+            [src]="slide.src"
+            [srcset]="slide.srcset"
+            [alt]="slide.alt"
+          />
+        }
+      </div>
+    </ng-template>
+  </p-carousel>
+  @if (productsError()) {
+    <h3 class="text-center text-red-500">{{ productsError() }}</h3>
+  } @else {
+    @for (item of productsSig(); track item.id; let i = $index) {
+      <h1 class="capitalize text-xl">{{ item.title }}</h1>
+      <p-carousel
+        ngSkipHydration
+        [value]="item.products"
+        [numScroll]="1"
+        [circular]="true"
+        [draggable]="true"
+        [showNavigators]="showNavigators()"
+        [autoplayInterval]="item.interval"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template let-product pTemplate="item">
+          <div class="h-full mx-2">
+            <!-- <app-card-grid [data]="product" [loading]="loadingProducts()" [loadingImg]="i < 5 ? 'eager' : 'lazy'" /> -->
+          </div>
+        </ng-template>
+      </p-carousel>
+    }
+  }
+</div>
