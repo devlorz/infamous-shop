@@ -1,0 +1,26 @@
+@media screen and (max-width: 992px) {
+  .navbar {
+    display: none !important;
+  }
+}
+
+.show {
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  display: flex !important;
+
+  padding-block: 2rem;
+  border-bottom: solid 1px var(--surface-border);
+  ul {
+    padding-inline: 2rem;
+    width: 100%;
+    flex-direction: column !important;
+
+    app-searchbar {
+      margin-top: 1.5rem;
+    }
+  }
+}
