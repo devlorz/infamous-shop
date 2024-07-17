@@ -1,6 +1,9 @@
-<app-header />
-<div class="flex justify-content-center">
-  <div class="w-12 xl:w-8 px-2 xl:px-0 py-4 xl:py-6">
-    <router-outlet class="w-full" />
+<div class="flex flex-column min-h-full">
+  <app-header />
+  <div class="flex justify-content-center flex-grow-1">
+    <div class="w-12 xl:w-8 px-2 xl:px-0 py-4 xl:py-6">
+      <router-outlet class="w-full" />
+    </div>
   </div>
+  <app-footer />
 </div>
