@@ -1,16 +1,17 @@
 import { Component, HostListener, inject, OnInit, signal } from '@angular/core';
+import { map } from 'rxjs';
 
 import { CarouselModule, CarouselResponsiveOptions } from 'primeng/carousel';
 import { SkeletonModule } from 'primeng/skeleton';
 
 import { HomeBanners, HomeProducts } from '../../interfaces/home.interface';
 import { HomeService } from '../../services/home.service';
-import { map } from 'rxjs';
+import { CardGridComponent } from '../../../../shared/components/card-grid/card-grid.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselModule, SkeletonModule],
+  imports: [CarouselModule, SkeletonModule, CardGridComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -19,6 +20,7 @@ export default class HomeComponent implements OnInit {
   productsSig = signal<HomeProducts[] | any[]>([]);
   showNavigators = signal<boolean>(true);
   loadingBanners = signal<boolean>(false);
+  loadingProducts = signal<boolean>(false);
   bannerError = signal<unknown>(undefined);
   productsError = signal<unknown>(undefined);
   service = inject(HomeService);
@@ -61,6 +63,15 @@ export default class HomeComponent implements OnInit {
       .pipe(
         map((banners) => {
           this.bannersSig.set(banners);
+        })
+      )
+      .subscribe();
+
+    this.service
+      .getProducts()
+      .pipe(
+        map((products) => {
+          this.productsSig.set(products);
         })
       )
       .subscribe();

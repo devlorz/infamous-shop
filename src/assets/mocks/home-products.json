@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "title": "productos destacados",
+    "title": "feature products",
     "interval": 3500,
     "products": [
       {
@@ -292,7 +292,7 @@
   },
   {
     "id": 1,
-    "title": "ultimos ingresados",
+    "title": "new",
     "interval": 4000,
     "products": [
       {

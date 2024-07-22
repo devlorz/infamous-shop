@@ -1,0 +1,30 @@
+<button
+      class="btn-img relative bg-white border-round overflow-hidden p-{{ padding() }}"
+      (click)="navigateToProduct(data().url_search)"
+      (mouseenter)="imgHover = true"
+      (mouseleave)="imgHover = false"
+    >
+      @if (data().images && data().images.length > 1) {
+        <img
+          class="w-full cursor-pointer transition-opacity"
+          [src]="data().images[0].url | imagePath"
+          [loading]="loading()"
+          alt="Imagen de {{ data().title }}"
+        />
+        <img
+          class="w-full absolute top-0 left-0 cursor-pointer transition-opacity opacity-0 p-{{ padding() }}"
+          loading="lazy"
+          [src]="data().images[1].url | imagePath"
+          [class.opacity-100]="imgHover"
+          alt="Imagen de {{ data().title }}"
+        />
+      } @else {
+        <img
+          class="w-full cursor-pointer transition-opacity"
+          [src]="data().images[0].url | imagePath"
+          [loading]="loading()"
+          [class.opacity-100]="imgHover"
+          alt="Imagen de {{ data().title }}"
+        />
+      }
+    </button>
